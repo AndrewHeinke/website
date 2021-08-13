@@ -23,7 +23,25 @@ function Header() {
   const SwitchIcon = useColorModeValue(FaMoon, FaSun);
   const { toggleColorMode: toggleMode } = useColorMode();
   const text = useColorModeValue("dark", "light");
+
   const menuBG = useColorModeValue("gray.100", "gray.900");
+  const logoFill = useColorModeValue("gray.300", "gray.600");
+
+  const NavLogo = (props) => (
+    <Icon
+      viewBox="0 0 242.41 323.21"
+      w={8}
+      h={8}
+      stroke="currentColor"
+      fill="none"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M161.6 80.8v80.8H80.8V80.8H0v242.41h80.8v-80.8h80.8v80.8h80.81V80.8H161.6zM80.8 0h80.8v80.8H80.8z"
+      />
+    </Icon>
+  );
 
   const MenuIcon = (props) => (
     <Icon
@@ -72,18 +90,15 @@ function Header() {
                 as="a"
                 variant="ghost"
                 aria-label="Home"
+                color={logoFill}
+                _hover={{
+                  background:
+                    "linear-gradient(to right, #12c2e9, #c471ed, #f64f59)",
+                  color: "white",
+                }}
                 onClick={() => setDisplay(false)}
               >
-                <svg
-                  className={styles["nav-logo"]}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 242.41 323.21"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M161.6 80.8v80.8H80.8V80.8H0v242.41h80.8v-80.8h80.8v80.8h80.81V80.8H161.6zM80.8 0h80.8v80.8H80.8z"
-                  />
-                </svg>
+                <NavLogo />
               </IconButton>
             </Link>
           </Box>
