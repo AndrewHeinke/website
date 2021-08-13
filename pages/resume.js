@@ -1,5 +1,11 @@
+import { Container, Heading } from "@chakra-ui/react";
+
 function Resume() {
-  return <div>Resume</div>;
+  return (
+    <Container maxW="container.xl" mt="12">
+      <Heading>Resume</Heading>
+    </Container>
+  );
 }
 
 export default Resume;

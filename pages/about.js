@@ -1,8 +1,10 @@
+import { Container, Heading } from "@chakra-ui/react";
+
 function About() {
   return (
-    <div className="container">
-      <h1>About page</h1>
-    </div>
+    <Container maxW="container.xl" mt="12">
+      <Heading>About</Heading>
+    </Container>
   );
 }
 

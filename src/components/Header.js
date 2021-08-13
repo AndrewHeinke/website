@@ -91,6 +91,7 @@ function Header() {
                 variant="ghost"
                 aria-label="Home"
                 color={logoFill}
+                ml="-.5rem"
                 _hover={{
                   background:
                     "linear-gradient(to right, #12c2e9, #c471ed, #f64f59)",
@@ -103,7 +104,7 @@ function Header() {
             </Link>
           </Box>
           <Spacer />
-          <Flex align="center">
+          <Flex align="center" mr="-.5rem">
             <Box display={["none", "none", "flex", "flex"]}>
               <ActiveLink activeClassName="active" href="/about" passHref>
                 <Button as="a" variant="ghost" aria-label="About">
