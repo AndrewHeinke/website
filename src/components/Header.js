@@ -1,8 +1,14 @@
 import styles from "./Header.module.scss";
 import ActiveLink from "./ActiveLink";
 import Link from "next/link";
+import { FaMoon, FaSun } from "react-icons/fa";
+import { IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react";
 
 function Header() {
+  const SwitchIcon = useColorModeValue(FaMoon, FaSun);
+  const { toggleColorMode: toggleMode } = useColorMode();
+  const text = useColorModeValue("dark", "light");
+
   return (
     <nav>
       <div className="container">
@@ -33,6 +39,16 @@ function Header() {
           <ActiveLink activeClassName="active" href="/contact" passHref>
             <a className="nav-link">Contact</a>
           </ActiveLink>
+          <IconButton
+            size="md"
+            fontSize="lg"
+            aria-label={`Switch to ${text} mode`}
+            variant="ghost"
+            color="current"
+            ml={{ base: "0", md: "3" }}
+            onClick={toggleMode}
+            icon={<SwitchIcon />}
+          />
         </div>
       </div>
     </nav>
