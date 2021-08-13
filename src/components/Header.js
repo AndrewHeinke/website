@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
-import styles from "./Header.module.scss";
-import ActiveLink from "./ActiveLink";
 import Link from "next/link";
+import ActiveLink from "./ActiveLink";
+import NavLink from "./NavLink";
 import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
 import {
   Icon,
@@ -24,7 +24,7 @@ function Header() {
   const { toggleColorMode: toggleMode } = useColorMode();
   const text = useColorModeValue("dark", "light");
 
-  const menuBG = useColorModeValue("gray.100", "gray.900");
+  const menuBG = useColorModeValue("white", "gray.800");
   const logoFill = useColorModeValue("gray.300", "gray.600");
 
   const NavLogo = (props) => (
@@ -106,41 +106,18 @@ function Header() {
           <Spacer />
           <Flex align="center" mr="-.5rem">
             <Box display={["none", "none", "flex", "flex"]}>
-              <ActiveLink activeClassName="active" href="/about" passHref>
-                <Button as="a" variant="ghost" aria-label="About">
-                  About
-                </Button>
-              </ActiveLink>
-              <ActiveLink activeClassName="active" href="/resume" passHref>
-                <Button
-                  as="a"
-                  variant="ghost"
-                  aria-label="Resume"
-                  ml={{ base: "0", md: "1" }}
-                >
-                  Resume
-                </Button>
-              </ActiveLink>
-              <ActiveLink activeClassName="active" href="/portfolio" passHref>
-                <Button
-                  as="a"
-                  variant="ghost"
-                  aria-label="Portfolio"
-                  ml={{ base: "0", md: "1" }}
-                >
-                  Portfolio
-                </Button>
-              </ActiveLink>
-              <ActiveLink activeClassName="active" href="/contact" passHref>
-                <Button
-                  as="a"
-                  variant="ghost"
-                  aria-label="Contact"
-                  ml={{ base: "0", md: "1" }}
-                >
-                  Contact
-                </Button>
-              </ActiveLink>
+              <NavLink to="/about" ariaLabel="Go to about me page">
+                About
+              </NavLink>
+              <NavLink to="/resume" ariaLabel="Go to resume page">
+                Resume
+              </NavLink>
+              <NavLink to="/portfolio" ariaLabel="Go to portfolio page">
+                Portfolio
+              </NavLink>
+              <NavLink to="/contact" ariaLabel="Go to contact page">
+                Contact
+              </NavLink>
             </Box>
             <IconButton
               size="md"
@@ -175,56 +152,48 @@ function Header() {
               pos="fixed"
               top="14"
               left="0"
+              borderTopWidth="1px"
               p="4"
               overflowY="auto"
               flexDir="column"
               bg={menuBG}
               display={["flex", "flex", "none", "none"]}
             >
-              <ActiveLink activeClassName="active" href="/about" passHref>
-                <Button
-                  as="a"
-                  variant="ghost"
-                  aria-label="About"
-                  width="100%"
-                  onClick={toggleMenu}
-                >
-                  About
-                </Button>
-              </ActiveLink>
-              <ActiveLink activeClassName="active" href="/resume" passHref>
-                <Button
-                  as="a"
-                  variant="ghost"
-                  aria-label="Resume"
-                  width="100%"
-                  onClick={toggleMenu}
-                >
-                  Resume
-                </Button>
-              </ActiveLink>
-              <ActiveLink activeClassName="active" href="/portfolio" passHref>
-                <Button
-                  as="a"
-                  variant="ghost"
-                  aria-label="Portfolio"
-                  width="100%"
-                  onClick={toggleMenu}
-                >
-                  Portfolio
-                </Button>
-              </ActiveLink>
-              <ActiveLink activeClassName="active" href="/contact" passHref>
-                <Button
-                  as="a"
-                  variant="ghost"
-                  aria-label="Contact"
-                  width="100%"
-                  onClick={toggleMenu}
-                >
-                  Contact
-                </Button>
-              </ActiveLink>
+              <NavLink
+                to="/about"
+                ariaLabel="Go to about me page"
+                width="100%"
+                mb="2"
+                onClick={toggleMenu}
+              >
+                About
+              </NavLink>
+              <NavLink
+                to="/resume"
+                ariaLabel="Go to resume page"
+                width="100%"
+                mb="2"
+                onClick={toggleMenu}
+              >
+                Resume
+              </NavLink>
+              <NavLink
+                to="/portfolio"
+                ariaLabel="Go to portfolio page"
+                width="100%"
+                mb="2"
+                onClick={toggleMenu}
+              >
+                Portfolio
+              </NavLink>
+              <NavLink
+                to="/contact"
+                ariaLabel="Go to contact page"
+                width="100%"
+                onClick={toggleMenu}
+              >
+                Contact
+              </NavLink>
             </Flex>
           )}
         </Flex>
