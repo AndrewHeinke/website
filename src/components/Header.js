@@ -4,6 +4,7 @@ import ActiveLink from "./ActiveLink";
 import Link from "next/link";
 import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
 import {
+  Icon,
   IconButton,
   Container,
   Flex,
@@ -23,6 +24,43 @@ function Header() {
   const { toggleColorMode: toggleMode } = useColorMode();
   const text = useColorModeValue("dark", "light");
   const menuBG = useColorModeValue("gray.100", "gray.900");
+
+  const MenuIcon = (props) => (
+    <Icon
+      viewBox="0 0 24 24"
+      w={6}
+      h={6}
+      stroke="currentColor"
+      fill="none"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M4 6h16M4 12h16M4 18h16"
+      />
+    </Icon>
+  );
+
+  const CloseIcon = (props) => (
+    <Icon
+      viewBox="0 0 24 24"
+      w={6}
+      h={6}
+      stroke="currentColor"
+      fill="none"
+      {...props}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M6 18L18 6M6 6l12 12"
+      />
+    </Icon>
+  );
 
   return (
     <Box as="nav" my="2">
@@ -108,7 +146,7 @@ function Header() {
               ml="2"
               display={["flex", "flex", "none", "none"]}
               onClick={toggleMenu}
-              icon={display ? <FaTimes /> : <FaBars />}
+              icon={display ? <CloseIcon /> : <MenuIcon />}
             />
           </Flex>
 
