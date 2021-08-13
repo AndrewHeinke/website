@@ -1,6 +1,6 @@
-.header-nav {
+.nav {
   &-logo {
-    color: white;
+    color: var(--primary);
     width: 2rem;
 
     @media screen and (max-width: 480px) {
