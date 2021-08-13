@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="Personal Website of Andrew Heinke" />
         <meta name="og:title" content="Personal Website of Andrew Heinke" />
       </Head>
-      <ChakraProvider theme={theme}>
+      <ChakraProvider resetCSS theme={theme}>
         <div className="app-wrapper">
           <div className="body">
             <Header />

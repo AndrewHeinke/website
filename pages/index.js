@@ -4,6 +4,7 @@ export default function Home() {
   return (
     <>
       <Heading>Homepage</Heading>
+      <a href="/click-me">click me</a>
     </>
   );
 }

@@ -3,7 +3,7 @@ import { Container, Text, Flex, useColorModeValue } from "@chakra-ui/react";
 import { HeartIcon } from "./Icons";
 
 function Footer() {
-  const footerBG = useColorModeValue("gray.100", "gray.700");
+  const footerBG = useColorModeValue("gray.100", "gray.900");
   return (
     <Flex as="footer" background={footerBG} className={styles["footer"]}>
       <Container maxW="container.xl">
