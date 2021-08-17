@@ -2,7 +2,6 @@ import { Container, Heading, Box, Grid, Text } from "@chakra-ui/react";
 
 import fs from "fs";
 import matter from "gray-matter";
-// import Link from "next/link";
 import path from "path";
 import BlogPostCard from "components/BlogPostCard";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
@@ -10,7 +9,13 @@ import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 export default function BlogIndex({ posts }) {
   return (
     <Container maxW="container.xl" mt="12">
-      <Grid templateColumns="repeat(auto-fit, minmax(400px, 1fr))" gap={6}>
+      <Heading as="h1">My Blog</Heading>
+      <Text>A collection of my thoughts, projects and process.</Text>
+      <Grid
+        templateColumns="repeat(auto-fit, minmax(400px, 1fr))"
+        gap={6}
+        mt="4rem"
+      >
         {posts.map((post, index) => {
           return <BlogPostCard key={index} post={post} />;
         })}
