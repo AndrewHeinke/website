@@ -2,42 +2,22 @@ import fs from "fs";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import Link from "next/link";
+import { Container, Heading, Text } from "@chakra-ui/react";
 import path from "path";
+import { MDXComponents } from "components/mdx-components";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 
 export default function PostPage({ source, frontMatter }) {
   return (
-    <div>
-      <header>
-        <nav>
-          <Link href="/blog">
-            <a>👈 Go back to blog index</a>
-          </Link>
-        </nav>
-      </header>
+    <Container>
       <div className="post-header">
-        <h1>{frontMatter.title}</h1>
+        <Heading as="h1">{frontMatter.title}</Heading>
         {frontMatter.description && (
-          <p className="description">{frontMatter.description}</p>
+          <Text fontSize="xl">{frontMatter.description}</Text>
         )}
       </div>
-      <main>
-        <MDXRemote {...source} />
-      </main>
-
-      <style jsx>{`
-        .post-header h1 {
-          margin-bottom: 0;
-        }
-        .post-header {
-          margin-bottom: 2rem;
-        }
-        .description {
-          opacity: 0.6;
-        }
-      `}</style>
-    </div>
+      <MDXRemote {...source} components={MDXComponents} />
+    </Container>
   );
 }
 

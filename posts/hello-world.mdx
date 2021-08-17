@@ -11,4 +11,14 @@ The title and description are pulled from the MDX file and processed using `gray
 
 ### Third level heading
 
+> Note 🚨: You need to use forwardRef from chakra-ui not react.
+
+```tsx live=false
+import { forwardRef, Box, BoxProps } from "@chakra-ui/react";
+
+const Card = forwardRef<BoxProps, "div">((props, ref) => (
+  <Box px="4" py="5" rounded="sm" shadow="lg" ref={ref} {...props} />
+));
+```
+
 Go back [Blog](/blog).
