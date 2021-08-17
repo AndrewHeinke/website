@@ -118,6 +118,9 @@ function Header() {
               <NavLink to="/contact" ariaLabel="Go to contact page">
                 Contact
               </NavLink>
+              <NavLink to="/blog" ariaLabel="Go to blog page">
+                Blog
+              </NavLink>
             </Box>
             <IconButton
               size="md"
@@ -190,9 +193,18 @@ function Header() {
                 to="/contact"
                 ariaLabel="Go to contact page"
                 width="100%"
+                mb="2"
                 onClick={toggleMenu}
               >
                 Contact
+              </NavLink>
+              <NavLink
+                to="/blog"
+                ariaLabel="Go to blog page"
+                width="100%"
+                onClick={toggleMenu}
+              >
+                Blog
               </NavLink>
             </Flex>
           )}
