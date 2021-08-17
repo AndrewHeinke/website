@@ -16,7 +16,9 @@ export default function PostPage({ source, frontMatter }) {
           <Text fontSize="xl">{frontMatter.description}</Text>
         )}
       </div>
-      <MDXRemote {...source} components={MDXComponents} />
+      <div className="mdx-prose">
+        <MDXRemote {...source} components={MDXComponents} />
+      </div>
     </Container>
   );
 }
