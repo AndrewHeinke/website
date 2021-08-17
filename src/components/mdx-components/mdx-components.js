@@ -3,6 +3,7 @@ import { Heading, Text, Link } from "@chakra-ui/react";
 import { InlineCode } from "components/mdx-components/inline-code";
 import { Pre } from "components/mdx-components/pre";
 import { Table, TData, THead } from "components/mdx-components/table";
+import CodeBlock from "./codeblock/codeblock";
 import * as React from "react";
 
 const { Alert, Box, chakra, Kbd } = Chakra;
@@ -16,6 +17,7 @@ export const MDXComponents = {
   strong: (props) => <Box as="strong" fontWeight="semibold" {...props} />,
   strong: (props) => <Box as="strong" fontWeight="semibold" {...props} />,
   inlineCode: InlineCode,
+  code: CodeBlock,
   pre: Pre,
   kbd: Kbd,
   br: ({ reset, ...props }) => (
@@ -29,7 +31,7 @@ export const MDXComponents = {
   th: THead,
   td: TData,
   a: (props) => <Link as="a" {...props} />,
-  p: (props) => <Text fontSize="xl" {...props} />,
+  p: (props) => <Text {...props} />,
   ul: (props) => <chakra.ul apply="mdx.ul" {...props} />,
   ol: (props) => <chakra.ol apply="mdx.ul" {...props} />,
   li: (props) => <chakra.li pb="4px" {...props} />,
