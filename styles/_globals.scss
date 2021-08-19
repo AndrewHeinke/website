@@ -19,6 +19,9 @@ body,
   font-weight: bold;
 }
 
+.blog-header {
+}
+
 .mdx-prose {
   .code-block {
     font-size: 1rem;
@@ -31,6 +34,8 @@ body,
   }
 
   .token-line {
+    overflow-wrap: break-word;
+    white-space: pre;
     padding-inline-start: var(--chakra-space-5);
     padding-inline-end: var(--chakra-space-5);
   }
