@@ -12,7 +12,7 @@ export default function BlogIndex({ posts }) {
       <Heading as="h1">Blog</Heading>
       <Text>A collection of my thoughts, projects and process.</Text>
       <Grid
-        templateColumns="repeat(auto-fit, minmax(400px, 1fr))"
+        templateColumns="repeat(auto-fit, minmax(350px, 1fr))"
         gap={6}
         mt="4rem"
       >

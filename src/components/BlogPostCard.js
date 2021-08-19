@@ -7,11 +7,11 @@ import {
   Text,
   VStack,
   Image,
+  Spacer,
   useColorModeValue,
 } from "@chakra-ui/react";
 import format from "date-fns/format";
 import parseISO from "date-fns/parseISO";
-import capitalize from "lodash/capitalize";
 import Link from "next/link";
 import * as React from "react";
 
@@ -26,93 +26,74 @@ export default function BlogPostCard({ post }) {
       cursor="pointer"
       position="relative"
       rounded="md"
+      display="flex"
       pb="3"
+      mb="4"
       role={"group"}
     >
-      <Center>
-        <Box
-          p={6}
-          w={"full"}
-          bg={useColorModeValue("white", "gray.900")}
-          boxShadow={"lg"}
-          rounded={"lg"}
-          pos={"relative"}
-          zIndex={1}
-          _groupHover={{
-            bg: `${useColorModeValue("purple.100", "purple.900")}`,
-            transition: "0.2s ease-in",
-          }}
+      <VStack
+        p={6}
+        w={"full"}
+        bg={useColorModeValue("white", "gray.900")}
+        boxShadow={"lg"}
+        rounded={"lg"}
+        pos={"relative"}
+        textAlign="left"
+        align="start"
+        zIndex={1}
+        borderWidth="1px"
+        _groupHover={{
+          bg: `${useColorModeValue("purple.100", "purple.900")}`,
+          transition: "0.2s ease-in",
+        }}
+      >
+        {post.data.image && (
+          <Image
+            rounded={"lg"}
+            mt={-12}
+            mb={4}
+            height={"230px"}
+            w="100%"
+            fit={"cover"}
+            src={post.data.image}
+            transition="0.3s ease"
+            _groupHover={{
+              transform: "scale(1.05);",
+            }}
+          />
+        )}
+        <Text
+          as="time"
+          dateTime={post.data.date}
+          fontSize="sm"
+          color="gray.500"
+          fontWeight="medium"
+          mb="2"
         >
-          {post.data.image && (
-            <Box
-              rounded={"lg"}
-              mt={-12}
-              mb={12}
-              pos={"relative"}
-              height={"230px"}
-              _after={{
-                transition: "all .3s ease",
-                content: '""',
-                w: "full",
-                h: "full",
-                pos: "absolute",
-                top: 5,
-                left: 0,
-                backgroundImage: `url(${post.data.image})`,
-                filter: "blur(15px)",
-                zIndex: -1,
-              }}
-            >
-              <Image
-                rounded={"lg"}
-                height={230}
-                w="100%"
-                fit={"cover"}
-                src={post.data.image}
-                transition="0.3s ease"
-                _groupHover={{
-                  transform: "scale(1.05);",
-                }}
-              />
-            </Box>
-          )}
-          <Text
-            as="time"
-            dateTime={post.data.date}
-            fontSize="sm"
-            color="gray.500"
-            fontWeight="medium"
-            mb="2"
-          >
-            {readableDate}
-          </Text>
-          <VStack align="flex-start">
-            <Heading as="h3" zIndex={10} size="md">
-              <Link
-                href={`/blog/${post.filePath.replace(/\.mdx?$/, "")}`}
-                passHref
-              >
-                <LinkOverlay>{post.data.title}</LinkOverlay>
-              </Link>
-            </Heading>
-            <Text mb="3" noOfLines={2}>
-              {post.data.description}
-            </Text>
-            <Box fontSize="sm" color="gray.500" pt="2">
-              <Box
-                bg="gray.100"
-                fontWeight="semibold"
-                px="2"
-                py="1"
-                as="span"
-                rounded="base"
-              >
-                {calcReadTime(post.content)} min read
-              </Box>
-            </Box>
-          </VStack>
+          {readableDate}
+        </Text>
+        <Heading as="h3" zIndex={10} size="md">
+          <Link href={`/blog/${post.filePath.replace(/\.mdx?$/, "")}`} passHref>
+            <LinkOverlay>{post.data.title}</LinkOverlay>
+          </Link>
+        </Heading>
+        <Text mb="3" noOfLines={2}>
+          {post.data.description}
+        </Text>
+        <Spacer />
+        <Box
+          fontSize="sm"
+          bg="gray.100"
+          color="gray.500"
+          fontWeight="semibold"
+          px="2"
+          py="1"
+          as="span"
+          rounded="base"
+        >
+          {calcReadTime(post.content)} min read
         </Box>
-      </Center>
+      </VStack>
     </LinkBox>
   );
 }
