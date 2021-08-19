@@ -4,10 +4,12 @@ import {
   Heading,
   Box,
   VStack,
-  HStack,
   Stack,
   Link,
   Icon,
+  Image,
+  VisuallyHidden,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 function Resume() {
@@ -32,7 +34,7 @@ function Resume() {
     return (
       <Text>
         <Link
-          color="purple.300"
+          color={useColorModeValue("purple.600", "purple.300")}
           isExternal={notExternal ? false : true}
           lineHeight="1.5"
           _hover={{
@@ -51,7 +53,7 @@ function Resume() {
     return (
       <Stack
         direction={["column", "column", "row", "row"]}
-        spacing={[2, 2, 8, 8]}
+        spacing={[0, 0, 8, 8]}
         align="start"
         {...props}
       />
@@ -73,13 +75,68 @@ function Resume() {
   };
 
   const ResumeDate = (props) => (
-    <Text {...props} minW="125px" color="gray.300" />
+    <Text
+      {...props}
+      minW="125px"
+      fontSize={[".875rem", ".875rem", "inherit", "inherit"]}
+      color={useColorModeValue("gray.500", "gray.300")}
+    />
+  );
+
+  const ResumeLocation = (props) => (
+    <Text
+      {...props}
+      fontSize={[".875rem", ".875rem", "inherit", "inherit"]}
+      color={useColorModeValue("gray.500", "gray.300")}
+    />
   );
 
   return (
     <Container mt="12" fontFamily="Fira Code" fontWeight="500">
-      <Heading mb="12">Resume</Heading>
+      <VisuallyHidden>
+        <Heading as="h1">Andrew Heinke Resume</Heading>
+      </VisuallyHidden>
+
+      <Stack direction="row" fontFamily="Inter" spacing="4" mb="12">
+        <Image
+          borderRadius="full"
+          boxSize="100px"
+          src="/images/andrew.jpg"
+          alt="Andrew Heinke"
+        />
+        <Stack spacing="0" direction="column" justify="center">
+          <Heading
+            as="h2"
+            fontSize="1.5rem"
+            fontWeight="400"
+            lineHeight="1"
+            mb="2px"
+          >
+            Andrew Heinke
+          </Heading>
+          <Text color={useColorModeValue("gray.500", "gray.400")}>
+            Front-end Engineer in Austin, Texas
+          </Text>
+          <Link
+            color={useColorModeValue("gray.400", "gray.600")}
+            fontSize=".875rem"
+            href="andrewheinke.com"
+          >
+            andrewheinke.com
+          </Link>
+        </Stack>
+      </Stack>
       <VStack spacing={12} align="stretch">
+        <ResumeSection title="About">
+          <Text
+            fontSize="md"
+            fontFamily="Inter"
+            color={useColorModeValue("gray.600", "gray.400")}
+          >
+            Andrew Heinke is a senior front-end engineer with a strong focus on
+            interfaces and experiences working remotely from Austin, Texas.
+          </Text>
+        </ResumeSection>
         <ResumeSection title="Work Experience">
           <ResumeRow>
             <ResumeDate>2021 – Now</ResumeDate>
@@ -87,7 +144,7 @@ function Resume() {
               <ResumeLink href="https://mark43.com/">
                 Senior Front End Engineer at Mark43
               </ResumeLink>
-              <Text color="gray.300">Remote</Text>
+              <ResumeLocation>Remote</ResumeLocation>
             </Box>
           </ResumeRow>
           <ResumeRow>
@@ -96,7 +153,7 @@ function Resume() {
               <ResumeLink href="https://www.usaa.com/">
                 Software Engineer at USAA
               </ResumeLink>
-              <Text color="gray.300">Austin, Texas</Text>
+              <ResumeLocation>Austin, Texas</ResumeLocation>
             </Box>
           </ResumeRow>
           <ResumeRow>
@@ -105,7 +162,7 @@ function Resume() {
               <ResumeLink href="https://www.kasasa.com/">
                 UI Designer at Kasasa
               </ResumeLink>
-              <Text color="gray.300">Austin, Texas</Text>
+              <ResumeLocation>Austin, Texas</ResumeLocation>
             </Box>
           </ResumeRow>
           <ResumeRow>
@@ -114,7 +171,7 @@ function Resume() {
               <ResumeLink href="https://www.crunchbase.com/organization/mosak-advertising-insights">
                 Junior Developer at MOSAK
               </ResumeLink>
-              <Text color="gray.300">Austin, Texas</Text>
+              <ResumeLocation>Austin, Texas</ResumeLocation>
             </Box>
           </ResumeRow>
         </ResumeSection>
@@ -125,7 +182,7 @@ function Resume() {
               <ResumeLink href="https://www.utexas.edu/">
                 The University of Texas at Austin
               </ResumeLink>
-              <Text color="gray.300">B.S. Advertising</Text>
+              <ResumeLocation>B.S. Advertising</ResumeLocation>
             </Box>
           </ResumeRow>
         </ResumeSection>
