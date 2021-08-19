@@ -15,9 +15,9 @@ function About() {
           width="560"
           height="315"
           src="https://www.youtube.com/embed/o5MARPLbJGg"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </AspectRatio>
     </Container>

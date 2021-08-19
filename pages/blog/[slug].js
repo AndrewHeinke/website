@@ -29,7 +29,11 @@ export default function PostPage({ source, frontMatter }) {
 
   return (
     <>
-      <Box my="4" bgColor={useColorModeValue("purple.50", "purple.900")}>
+      <Box
+        className="blog-header"
+        my="4"
+        bgColor={useColorModeValue("purple.50", "purple.900")}
+      >
         <Container p="4">
           <Link href="/blog" passHref>
             <Button

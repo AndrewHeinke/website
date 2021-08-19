@@ -99,15 +99,11 @@ export default function BlogPostCard({ post }) {
               {post.data.description}
             </Text>
             <Box fontSize="sm" color="gray.500" pt="2">
-              <Text as="span" mb="3">
-                {post.data.tags.map((t) => capitalize(t)).join(",")}
-              </Text>
               <Box
                 bg="gray.100"
                 fontWeight="semibold"
                 px="2"
                 py="1"
-                ml="5"
                 as="span"
                 rounded="base"
               >

@@ -14,7 +14,7 @@ function CopyButton({ code, ...props }) {
       height="24px"
       top={0}
       zIndex="1"
-      right={["0px", "0px", "-1.5rem", "-1.5rem"]}
+      right={["1rem", "1rem", "-2rem", "-2rem"]}
       {...props}
       onClick={onCopy}
     >

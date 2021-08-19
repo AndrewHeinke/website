@@ -17,7 +17,6 @@ export const MDXComponents = {
   h4: (props) => <Heading as="h4" {...props} />,
   hr: (props) => <chakra.hr apply="mdx.hr" {...props} />,
   strong: (props) => <Box as="strong" fontWeight="semibold" {...props} />,
-  strong: (props) => <Box as="strong" fontWeight="semibold" {...props} />,
   inlineCode: InlineCode,
   code: CodeBlock,
   kbd: Kbd,
@@ -46,7 +45,5 @@ export const MDXComponents = {
   td: TData,
   a: (props) => <Link as="a" {...props} />,
   p: (props) => <Text {...props} />,
-  ul: (props) => <chakra.ul apply="mdx.ul" {...props} />,
-  ol: (props) => <chakra.ol apply="mdx.ul" {...props} />,
   li: (props) => <chakra.li pb="4px" {...props} />,
 };

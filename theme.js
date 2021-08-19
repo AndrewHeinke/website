@@ -71,7 +71,15 @@ const styles = {
         },
       },
       ul: {
-        mt: "1.5rem",
+        my: "1.5rem",
+        ml: "1.25rem",
+        "blockquote &": { mt: 0 },
+        "& > * + *": {
+          mt: "0.25rem",
+        },
+      },
+      ol: {
+        my: "1.5rem",
         ml: "1.25rem",
         "blockquote &": { mt: 0 },
         "& > * + *": {
