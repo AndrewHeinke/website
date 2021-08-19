@@ -14,3 +14,14 @@ body,
   color: var(--success);
   font-weight: bold;
 }
+
+.mdx-prose {
+  .code-block {
+    font-size: 14px;
+    overflow: scroll;
+    font-family: "SF Mono", Menlo, monospace;
+    word-wrap: normal;
+    padding-left: 1rem;
+    white-space: pre;
+  }
+}

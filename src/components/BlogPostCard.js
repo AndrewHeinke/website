@@ -69,9 +69,9 @@ export default function BlogPostCard({ post }) {
                 w="100%"
                 fit={"cover"}
                 src={post.data.image}
+                transition="0.3s ease"
                 _groupHover={{
-                  transform: "translateY(-4px)",
-                  transition: "0.2s ease-in",
+                  transform: "scale(1.05);",
                 }}
               />
             </Box>

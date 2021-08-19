@@ -9,7 +9,7 @@ function CopyButton({ code, ...props }) {
       size="sm"
       position="absolute"
       textTransform="uppercase"
-      colorScheme="teal"
+      colorScheme="purple"
       fontSize="xs"
       height="24px"
       top={0}

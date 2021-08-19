@@ -45,34 +45,28 @@ const styles = {
         fontSize: "1.125rem",
       },
       a: {
-        color: "teal.500",
-        fontWeight: "semibold",
+        color: "purple.300",
+        textDecoration: "underline",
         transition: "color 0.15s",
         transitionTimingFunction: "ease-out",
         _hover: {
-          color: "teal.600",
+          color: "purple.400",
         },
       },
       p: {
-        mt: "1.25rem",
+        my: "1.25rem",
+        fontSize: "lg",
         lineHeight: 1.5,
         "blockquote &": {
-          mt: 0,
+          my: 0,
         },
       },
       hr: {
         my: "4rem",
       },
       blockquote: {
-        bg: "orange.100",
-        borderWidth: "1px",
-        borderColor: "orange.200",
-        rounded: "lg",
-        px: "1.25rem",
-        py: "1rem",
-        my: "1.5rem",
-        "& + p": {
-          mt: "0",
+        "> p": {
+          my: "0",
         },
       },
       ul: {

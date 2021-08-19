@@ -2,6 +2,7 @@ import * as Chakra from "@chakra-ui/react";
 import { Heading, Text, Link } from "@chakra-ui/react";
 import { InlineCode } from "components/mdx-components/inline-code";
 import { Pre } from "components/mdx-components/pre";
+import { VideoEmbed } from "components/mdx-components/video-embed";
 import { Table, TData, THead } from "components/mdx-components/table";
 import CodeBlock from "./codeblock/codeblock";
 import * as React from "react";
@@ -9,6 +10,7 @@ import * as React from "react";
 const { Alert, Box, chakra, Kbd } = Chakra;
 export const MDXComponents = {
   ...Chakra,
+  VideoEmbed,
   h1: (props) => <Heading as="h1" {...props} />,
   h2: (props) => <Heading as="h2" {...props} />,
   h3: (props) => <Heading as="h3" {...props} />,
@@ -18,8 +20,8 @@ export const MDXComponents = {
   strong: (props) => <Box as="strong" fontWeight="semibold" {...props} />,
   inlineCode: InlineCode,
   code: CodeBlock,
-  pre: Pre,
   kbd: Kbd,
+  pre: Pre,
   br: ({ reset, ...props }) => (
     <Box
       as={reset ? "br" : undefined}
@@ -27,14 +29,6 @@ export const MDXComponents = {
       {...props}
     />
   ),
-  table: Table,
-  th: THead,
-  td: TData,
-  a: (props) => <Link as="a" {...props} />,
-  p: (props) => <Text {...props} />,
-  ul: (props) => <chakra.ul apply="mdx.ul" {...props} />,
-  ol: (props) => <chakra.ol apply="mdx.ul" {...props} />,
-  li: (props) => <chakra.li pb="4px" {...props} />,
   blockquote: (props) => (
     <Alert
       mt="4"
@@ -47,4 +41,12 @@ export const MDXComponents = {
       {...props}
     />
   ),
+  table: Table,
+  th: THead,
+  td: TData,
+  a: (props) => <Link as="a" {...props} />,
+  p: (props) => <Text {...props} />,
+  ul: (props) => <chakra.ul apply="mdx.ul" {...props} />,
+  ol: (props) => <chakra.ol apply="mdx.ul" {...props} />,
+  li: (props) => <chakra.li pb="4px" {...props} />,
 };
