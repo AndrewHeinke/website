@@ -84,7 +84,6 @@ const styles = {
         fontFamily: "Fira Code VF, Fira Code, sans-serif",
         fontSize: "0.875em",
         py: "2px",
-        bgColor: "purple.50",
         whiteSpace: "nowrap",
         lineHeight: "normal",
       },

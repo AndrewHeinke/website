@@ -2,7 +2,15 @@ import fs from "fs";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import { Box, Container, Heading, Text, Button, Icon } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Heading,
+  Text,
+  Button,
+  Icon,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import path from "path";
 import Link from "next/link";
 import { MDXComponents } from "components/mdx-components";
@@ -21,34 +29,27 @@ export default function PostPage({ source, frontMatter }) {
 
   return (
     <>
-      <Container maxW="container.md" mt="12">
-        <Box
-          my="4"
-          bgColor="purple.50"
-          mx={["-1rem", "-1rem", 0, 0]}
-          rounded={[null, null, "lg", "lg"]}
-        >
-          <Container p="4">
-            <Link href="/blog" passHref>
-              <Button
-                as="a"
-                variant="outline"
-                colorScheme="purple"
-                leftIcon={<BackIcon />}
-                size="xs"
-              >
-                Back to Blog
-              </Button>
-            </Link>
-            <Heading as="h1" mt="2">
-              {frontMatter.title}
-            </Heading>
-            {frontMatter.description && (
-              <Text fontSize="xl">{frontMatter.description}</Text>
-            )}
-          </Container>
-        </Box>
-      </Container>
+      <Box my="4" bgColor={useColorModeValue("purple.50", "purple.900")}>
+        <Container p="4">
+          <Link href="/blog" passHref>
+            <Button
+              as="a"
+              variant="outline"
+              colorScheme="purple"
+              leftIcon={<BackIcon />}
+              size="xs"
+            >
+              Back to Blog
+            </Button>
+          </Link>
+          <Heading as="h1" mt="2">
+            {frontMatter.title}
+          </Heading>
+          {frontMatter.description && (
+            <Text fontSize="xl">{frontMatter.description}</Text>
+          )}
+        </Container>
+      </Box>
       <Container className="mdx-prose">
         <MDXRemote {...source} components={MDXComponents} />
       </Container>
