@@ -72,6 +72,14 @@ const FontFace = () => (
         font-display: block;
         src: url(/fonts/Inter.woff2) format("woff2");
       }
+
+      @font-face {
+        font-family: "Fira Code";
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url(/fonts/FiraCode-Regular.woff2) format("woff2");
+      }
     `}
   </style>
 );

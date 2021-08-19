@@ -6,8 +6,12 @@ body,
 
 .app-wrapper {
   min-height: 100%;
-  display: grid;
-  grid-template-rows: 1fr auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  flex: 1 0 auto;
 }
 
 .active {
@@ -17,11 +21,20 @@ body,
 
 .mdx-prose {
   .code-block {
-    font-size: 14px;
-    overflow: scroll;
-    font-family: "SF Mono", Menlo, monospace;
-    word-wrap: normal;
-    padding-left: 1rem;
+    font-size: 1rem;
+    line-height: 1.75;
+    overflow-x: auto;
+    padding: 1rem 0;
+    font-family: "Fira Code", monospace;
+    word-wrap: normal !important;
     white-space: pre;
+  }
+
+  .token-line {
+    padding-inline-start: var(--chakra-space-5);
+    padding-inline-end: var(--chakra-space-5);
+  }
+  .plain {
+    color: #f8f8f2;
   }
 }

@@ -1,0 +1,44 @@
+---
+title: Helpful Git Commands and Mac Shortcuts
+description: A collection of my useful shortcuts and Git commands
+date: 2021-05-20T09:15:00-0400
+tags: ["git", "code commands"]
+image: https://cdn.dribbble.com/users/3281732/screenshots/6552930/ef066617-ce4e-45c9-ae22-1af21711119c.jpeg
+---
+
+## Mac Shortcuts
+
+Show Hidden Files: `⌘command` + `shift` + `.`
+
+## Command Line
+
+Pull in changes to master into working branch:
+
+```bash
+git pull --rebase origin master
+git push origin [yourBranchName] --force
+```
+
+### Interactive Rebase
+
+```bash
+git rebase -i HEAD~3
+
+Commands:
+* p, pick = use commit
+* r, reword = use commit, but edit the commit message
+* e, edit = use commit, but stop for amending
+* s, squash = use commit, but meld into previous commit
+* f, fixup = like "squash", but discard this commit's log message
+* x, exec = run command (the rest of the line) using shell
+
+git push origin [yourBranchName] --force
+```
+
+## ES Lint
+
+`// eslint-disable-line no-console`
+
+## Kill all node processes
+
+`killall node`

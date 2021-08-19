@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import React from "react";
 
@@ -10,7 +11,7 @@ function Basic({ codeString, language, ...props }) {
       language={language}
     >
       {({ tokens, getLineProps, getTokenProps }) => (
-        <pre className="code-block">
+        <Box as="pre" bg="#282a36" className="code-block">
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
@@ -18,7 +19,7 @@ function Basic({ codeString, language, ...props }) {
               ))}
             </div>
           ))}
-        </pre>
+        </Box>
       )}
     </Highlight>
   );

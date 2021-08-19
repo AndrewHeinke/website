@@ -1,8 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import ActiveLink from "./ActiveLink";
 import NavLink from "./NavLink";
-import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
+import { FaMoon, FaSun } from "react-icons/fa";
 import {
   Icon,
   IconButton,
@@ -10,13 +9,19 @@ import {
   Flex,
   Box,
   Spacer,
-  Button,
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
+import FocusTrap from "focus-trap-react";
 
 function Header() {
   const [display, setDisplay] = useState(false);
+  const [menuIconDisplay, setMenuIconDisplay] = useState([
+    "flex",
+    "flex",
+    "none",
+    "none",
+  ]);
   const toggleMenu = () => {
     setDisplay((prevState) => !prevState);
   };
@@ -26,6 +31,16 @@ function Header() {
 
   const menuBG = useColorModeValue("white", "gray.800");
   const logoFill = useColorModeValue("gray.300", "gray.600");
+
+  useEffect(() => {
+    if (display) {
+      document.body.style.overflow = "hidden";
+      setMenuIconDisplay(["flex", "flex", "flex", "flex"]);
+    } else {
+      document.body.style.overflow = "unset";
+      setMenuIconDisplay(["flex", "flex", "none", "none"]);
+    }
+  }, [display]);
 
   const NavLogo = (props) => (
     <Icon
@@ -83,132 +98,137 @@ function Header() {
   return (
     <Box as="nav" my="2">
       <Container maxW="container.xl">
-        <Flex>
-          <Box>
-            <Link href="/" passHref>
-              <IconButton
-                as="a"
-                variant="ghost"
-                aria-label="Home"
-                color={logoFill}
-                ml="-.5rem"
-                _hover={{
-                  background:
-                    "linear-gradient(to right, #12c2e9, #c471ed, #f64f59)",
-                  color: "white",
-                }}
-                onClick={() => setDisplay(false)}
-              >
-                <NavLogo />
-              </IconButton>
-            </Link>
-          </Box>
-          <Spacer />
-          <Flex align="center" mr="-.5rem">
-            <Box display={["none", "none", "flex", "flex"]}>
-              <NavLink to="/about" ariaLabel="Go to about me page">
-                About
-              </NavLink>
-              <NavLink to="/resume" ariaLabel="Go to resume page">
-                Resume
-              </NavLink>
-              <NavLink to="/portfolio" ariaLabel="Go to portfolio page">
-                Portfolio
-              </NavLink>
-              <NavLink to="/contact" ariaLabel="Go to contact page">
-                Contact
-              </NavLink>
-              <NavLink to="/blog" ariaLabel="Go to blog page">
-                Blog
-              </NavLink>
+        <FocusTrap active={display}>
+          <Flex>
+            <Box>
+              <Link href="/" passHref>
+                <IconButton
+                  as="a"
+                  variant="ghost"
+                  aria-label="Home"
+                  color={logoFill}
+                  ml="-.5rem"
+                  _hover={{
+                    background:
+                      "linear-gradient(to right, #12c2e9, #c471ed, #f64f59)",
+                    color: "white",
+                  }}
+                  onClick={() => setDisplay(false)}
+                >
+                  <NavLogo />
+                </IconButton>
+              </Link>
             </Box>
-            <IconButton
-              size="md"
-              fontSize="lg"
-              aria-label={`Switch to ${text} mode`}
-              variant="ghost"
-              color="current"
-              ml={{ base: "0", md: "1" }}
-              onClick={toggleMode}
-              icon={<SwitchIcon />}
-            />
-            <IconButton
-              size="md"
-              fontSize="lg"
-              aria-label="Open Menu"
-              zIndex="30"
-              variant="ghost"
-              color="current"
-              ml="2"
-              display={["flex", "flex", "none", "none"]}
-              onClick={toggleMenu}
-              icon={display ? <CloseIcon /> : <MenuIcon />}
-            />
-          </Flex>
+            <Spacer />
 
-          {/* mobile menu */}
-          {display && (
-            <Flex
-              w="100vw"
-              zIndex="20"
-              h="100vh"
-              pos="fixed"
-              top="14"
-              left="0"
-              borderTopWidth="1px"
-              p="4"
-              overflowY="auto"
-              flexDir="column"
-              bg={menuBG}
-              display={["flex", "flex", "none", "none"]}
-            >
-              <NavLink
-                to="/about"
-                ariaLabel="Go to about me page"
-                width="100%"
-                mb="2"
+            <Flex align="center" mr="-.5rem">
+              {!display && (
+                <Box display={["none", "none", "flex", "flex"]}>
+                  <NavLink to="/about" ariaLabel="Go to about me page">
+                    About
+                  </NavLink>
+                  <NavLink to="/resume" ariaLabel="Go to resume page">
+                    Resume
+                  </NavLink>
+                  <NavLink to="/portfolio" ariaLabel="Go to portfolio page">
+                    Portfolio
+                  </NavLink>
+                  <NavLink to="/contact" ariaLabel="Go to contact page">
+                    Contact
+                  </NavLink>
+                  <NavLink to="/blog" ariaLabel="Go to blog page">
+                    Blog
+                  </NavLink>
+                </Box>
+              )}
+              <IconButton
+                size="md"
+                fontSize="lg"
+                aria-label={`Switch to ${text} mode`}
+                variant="ghost"
+                color="current"
+                ml={{ base: "0", md: "1" }}
+                onClick={toggleMode}
+                icon={<SwitchIcon />}
+              />
+              <IconButton
+                size="md"
+                fontSize="lg"
+                aria-label="Open Menu"
+                zIndex="30"
+                variant="ghost"
+                color="current"
+                ml="2"
+                display={menuIconDisplay}
                 onClick={toggleMenu}
-              >
-                About
-              </NavLink>
-              <NavLink
-                to="/resume"
-                ariaLabel="Go to resume page"
-                width="100%"
-                mb="2"
-                onClick={toggleMenu}
-              >
-                Resume
-              </NavLink>
-              <NavLink
-                to="/portfolio"
-                ariaLabel="Go to portfolio page"
-                width="100%"
-                mb="2"
-                onClick={toggleMenu}
-              >
-                Portfolio
-              </NavLink>
-              <NavLink
-                to="/contact"
-                ariaLabel="Go to contact page"
-                width="100%"
-                mb="2"
-                onClick={toggleMenu}
-              >
-                Contact
-              </NavLink>
-              <NavLink
-                to="/blog"
-                ariaLabel="Go to blog page"
-                width="100%"
-                onClick={toggleMenu}
-              >
-                Blog
-              </NavLink>
+                icon={display ? <CloseIcon /> : <MenuIcon />}
+              />
             </Flex>
-          )}
-        </Flex>
+
+            {/* mobile menu */}
+            {display && (
+              <Flex
+                w="100vw"
+                zIndex="20"
+                h="100vh"
+                pos="fixed"
+                top="14"
+                left="0"
+                borderTopWidth="1px"
+                p="4"
+                overflowY="auto"
+                flexDir="column"
+                bg={menuBG}
+                display="flex"
+              >
+                <NavLink
+                  to="/about"
+                  ariaLabel="Go to about me page"
+                  width="100%"
+                  mb="2"
+                  onClick={toggleMenu}
+                >
+                  About
+                </NavLink>
+                <NavLink
+                  to="/resume"
+                  ariaLabel="Go to resume page"
+                  width="100%"
+                  mb="2"
+                  onClick={toggleMenu}
+                >
+                  Resume
+                </NavLink>
+                <NavLink
+                  to="/portfolio"
+                  ariaLabel="Go to portfolio page"
+                  width="100%"
+                  mb="2"
+                  onClick={toggleMenu}
+                >
+                  Portfolio
+                </NavLink>
+                <NavLink
+                  to="/contact"
+                  ariaLabel="Go to contact page"
+                  width="100%"
+                  mb="2"
+                  onClick={toggleMenu}
+                >
+                  Contact
+                </NavLink>
+                <NavLink
+                  to="/blog"
+                  ariaLabel="Go to blog page"
+                  width="100%"
+                  onClick={toggleMenu}
+                >
+                  Blog
+                </NavLink>
+              </Flex>
+            )}
+          </Flex>
+        </FocusTrap>
       </Container>
     </Box>
   );

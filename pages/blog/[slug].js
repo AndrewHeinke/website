@@ -21,26 +21,37 @@ export default function PostPage({ source, frontMatter }) {
 
   return (
     <>
-      <Link href="/blog" passHref>
-        <Button
-          as="a"
-          variant="outline"
-          colorScheme="purple"
-          leftIcon={<BackIcon />}
-          size="xs"
+      <Container maxW="container.md" mt="12">
+        <Box
+          my="4"
+          bgColor="purple.50"
+          mx={["-1rem", "-1rem", 0, 0]}
+          rounded={[null, null, "lg", "lg"]}
         >
-          Back to Blog
-        </Button>
-      </Link>
-      <Box mt="4">
-        <Heading as="h1">{frontMatter.title}</Heading>
-        {frontMatter.description && (
-          <Text fontSize="xl">{frontMatter.description}</Text>
-        )}
-      </Box>
-      <Box className="mdx-prose">
+          <Container p="4">
+            <Link href="/blog" passHref>
+              <Button
+                as="a"
+                variant="outline"
+                colorScheme="purple"
+                leftIcon={<BackIcon />}
+                size="xs"
+              >
+                Back to Blog
+              </Button>
+            </Link>
+            <Heading as="h1" mt="2">
+              {frontMatter.title}
+            </Heading>
+            {frontMatter.description && (
+              <Text fontSize="xl">{frontMatter.description}</Text>
+            )}
+          </Container>
+        </Box>
+      </Container>
+      <Container className="mdx-prose">
         <MDXRemote {...source} components={MDXComponents} />
-      </Box>
+      </Container>
     </>
   );
 }

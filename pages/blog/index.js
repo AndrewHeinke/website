@@ -9,7 +9,7 @@ import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 export default function BlogIndex({ posts }) {
   return (
     <Container maxW="container.xl" mt="12">
-      <Heading as="h1">My Blog</Heading>
+      <Heading as="h1">Blog</Heading>
       <Text>A collection of my thoughts, projects and process.</Text>
       <Grid
         templateColumns="repeat(auto-fit, minmax(400px, 1fr))"

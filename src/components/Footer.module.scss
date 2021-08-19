@@ -1,8 +1,7 @@
 .footer {
   margin-top: 4rem;
   padding: 2rem 0;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  flex-shrink: 0;
 
   &-text-flex {
     display: flex;

@@ -1,6 +1,6 @@
-import { Box } from "@chakra-ui/react";
-import theme from "prism-react-renderer/themes/nightOwl";
+import theme from "prism-react-renderer/themes/dracula";
 import React from "react";
+import { Box } from "@chakra-ui/react";
 import CodeContainer from "./code-container";
 import CopyButton from "./copy-button";
 import Highlight from "./highlight";
@@ -13,8 +13,13 @@ function CodeBlock(props) {
 
   return (
     <Box position="relative" zIndex="0">
-      <CodeContainer overflowX="auto">
-        <Highlight codeString={rawCode} language={language} theme={theme} />
+      <CodeContainer overflow="hidden">
+        <Highlight
+          overflowX="auto"
+          codeString={rawCode}
+          language={language}
+          theme={theme}
+        />
       </CodeContainer>
       <CopyButton top="4" code={rawCode} />
     </Box>

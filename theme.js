@@ -12,17 +12,17 @@ const styles = {
   global: {
     ".mdx-prose": {
       h1: {
-        mt: "2rem",
+        mt: "2em",
         mb: ".25rem",
-        lineHeight: 1.2,
+        lineHeight: 1.25,
         fontWeight: "bold",
         fontSize: "1.875rem",
         letterSpacing: "-.025em",
       },
       h2: {
-        mt: "4rem",
-        mb: "0.5rem",
-        lineHeight: 1.3,
+        mt: "2em",
+        mb: "0.25em",
+        lineHeight: 1.25,
         fontWeight: "semibold",
         fontSize: "1.5rem",
         letterSpacing: "-.025em",
@@ -31,15 +31,16 @@ const styles = {
         },
       },
       h3: {
-        mt: "3rem",
-        mb: "0.5rem",
+        mt: "2em",
+        mb: "0.25em",
         lineHeight: 1.25,
         fontWeight: "semibold",
         fontSize: "1.25rem",
         letterSpacing: "-.025em",
       },
       h4: {
-        mt: "3rem",
+        mt: "2em",
+        mb: "0.25em",
         lineHeight: 1.375,
         fontWeight: "semibold",
         fontSize: "1.125rem",
@@ -54,7 +55,7 @@ const styles = {
         },
       },
       p: {
-        my: "1.25rem",
+        mb: "1.25rem",
         fontSize: "lg",
         lineHeight: 1.5,
         "blockquote &": {
@@ -80,8 +81,10 @@ const styles = {
       code: {
         rounded: "sm",
         px: "1",
+        fontFamily: "Fira Code VF, Fira Code, sans-serif",
         fontSize: "0.875em",
         py: "2px",
+        bgColor: "purple.50",
         whiteSpace: "nowrap",
         lineHeight: "normal",
       },
