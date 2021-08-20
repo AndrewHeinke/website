@@ -104,6 +104,7 @@ function Resume() {
           src="/images/andrew.jpg"
           alt="Andrew Heinke"
         />
+
         <Stack spacing="0" direction="column" justify="center">
           <Heading
             as="h2"

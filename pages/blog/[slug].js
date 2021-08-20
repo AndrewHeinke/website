@@ -26,6 +26,8 @@ export default function PostPage({ source, frontMatter }) {
       />
     </Icon>
   );
+  const foo = <MDXRemote {...source} components={MDXComponents} />;
+  console.log(foo.props.compiledSource);
 
   return (
     <>
@@ -38,7 +40,6 @@ export default function PostPage({ source, frontMatter }) {
           <Link href="/blog" passHref>
             <Button
               as="a"
-              variant="outline"
               colorScheme="purple"
               leftIcon={<BackIcon />}
               size="xs"

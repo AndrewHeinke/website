@@ -1,25 +1,46 @@
-import { Container, Heading, Text, AspectRatio } from "@chakra-ui/react";
+import { Stack, Container, Heading, Text, Image, Box } from "@chakra-ui/react";
 
 function About() {
   return (
-    <Container mt="12">
-      <Heading mb="4">About</Heading>
+    <Container mt="12" maxW="container.md">
+      <Heading mb="12" textAlign="center">
+        About Me
+      </Heading>
+      <Box
+        position="relative"
+        borderWidth="1px"
+        rounded="lg"
+        pl={["5", "125px", "200px", "200px"]}
+        pt="5"
+        pr={["50px", "5", "5", "5"]}
+        pb="5"
+        mb="12"
+      >
+        <Image
+          w={["75px", "100px", "175px", "200px"]}
+          position="absolute"
+          bottom="0"
+          right={["-.5rem", null, null, null]}
+          left={[null, "-.5rem", "-1.5rem", "-2.5rem"]}
+          src="/images/unicorn.png"
+          alt=""
+        />
+        <Heading
+          as="h2"
+          fontSize={["1rem", "1.25rem", "1.75rem", "2rem"]}
+          fontWeight="400"
+          mb="2px"
+        >
+          A developer with a mind for design.
+          <br />I have a wide array of skills to develop amazing experiences.
+        </Heading>
+      </Box>
       <Text fontSize="lg" maxW="lg">
         Andrew Heinke is a web developer currently living in Austin Texas.
         JavaScript is his language of choice writing React applications and
         developing components at USAA as part of the Design Language Systems
         team.
       </Text>
-      <AspectRatio maxW="560px" ratio={16 / 9} my="4">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/o5MARPLbJGg"
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </AspectRatio>
     </Container>
   );
 }
