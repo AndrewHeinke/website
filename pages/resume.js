@@ -8,6 +8,7 @@ import {
   Link,
   Icon,
   Image,
+  Progress,
   VisuallyHidden,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -98,17 +99,19 @@ function Resume() {
       </VisuallyHidden>
 
       <Stack direction="row" fontFamily="Inter" spacing="4" mb="12">
-        <Image
-          borderRadius="full"
-          boxSize="100px"
-          src="/images/andrew.jpg"
-          alt="Andrew Heinke"
-        />
+        <Box borderRadius="full" borderWidth="6px">
+          <Image
+            borderRadius="full"
+            w="100px"
+            src="/images/andrew.jpg"
+            alt="Andrew Heinke"
+          />
+        </Box>
 
         <Stack spacing="0" direction="column" justify="center">
           <Heading
             as="h2"
-            fontSize="1.5rem"
+            fontSize="1.75rem"
             fontWeight="400"
             lineHeight="1"
             mb="2px"
@@ -178,6 +181,15 @@ function Resume() {
         </ResumeSection>
         <ResumeSection title="Education">
           <ResumeRow>
+            <ResumeDate>2016</ResumeDate>
+            <Box>
+              <ResumeLink href="https://www.utexas.edu/">
+                The University of Texas at Austin
+              </ResumeLink>
+              <ResumeLocation>Full Stack Coding Bootcamp</ResumeLocation>
+            </Box>
+          </ResumeRow>
+          <ResumeRow>
             <ResumeDate>2011 – 2015</ResumeDate>
             <Box>
               <ResumeLink href="https://www.utexas.edu/">
@@ -186,6 +198,38 @@ function Resume() {
               <ResumeLocation>B.S. Advertising</ResumeLocation>
             </Box>
           </ResumeRow>
+        </ResumeSection>
+        <ResumeSection title="Skills">
+          <Stack spacing={5}>
+            <Box>
+              <Text mb="1">HTML5 &amp; CSS</Text>
+              <Progress value={100} size="xs" colorScheme="green" />
+            </Box>
+            <Box>
+              <Text mb="1">JavaScript</Text>
+              <Progress value={90} size="xs" colorScheme="green" />
+            </Box>
+            <Box>
+              <Text mb="1">React</Text>
+              <Progress value={90} size="xs" colorScheme="green" />
+            </Box>
+            <Box>
+              <Text mb="1">Accessibility</Text>
+              <Progress value={95} size="xs" colorScheme="green" />
+            </Box>
+            <Box>
+              <Text mb="1">Adobe Creative Suite</Text>
+              <Progress value={100} size="xs" colorScheme="green" />
+            </Box>
+            <Box>
+              <Text mb="1">Singing</Text>
+              <Progress value={40} size="xs" colorScheme="yellow" />
+            </Box>
+            <Box>
+              <Text mb="1">Basketball</Text>
+              <Progress value={10} size="xs" colorScheme="red" />
+            </Box>
+          </Stack>
         </ResumeSection>
         <ResumeSection title="Contact">
           <ResumeRow>
