@@ -15,6 +15,7 @@ import path from "path";
 import Link from "next/link";
 import { MDXComponents } from "components/mdx-components";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
+import SEO from "components/seo";
 
 export default function PostPage({ source, frontMatter }) {
   const BackIcon = (props) => (
@@ -26,11 +27,23 @@ export default function PostPage({ source, frontMatter }) {
       />
     </Icon>
   );
-  const foo = <MDXRemote {...source} components={MDXComponents} />;
-  console.log(foo.props.compiledSource);
 
   return (
     <>
+      <SEO
+        title={frontMatter.title}
+        description={frontMatter.description}
+        openGraph={{
+          images: [
+            {
+              url: frontMatter.image,
+              width: 600,
+              height: 300,
+              alt: frontMatter.title,
+            },
+          ],
+        }}
+      />
       <Box
         className="blog-header"
         my="4"
