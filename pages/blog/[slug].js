@@ -15,7 +15,7 @@ import path from "path";
 import Link from "next/link";
 import { MDXComponents } from "components/mdx-components";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
-import SEO from "components/seo";
+import SEO from "components/SEO";
 
 export default function PostPage({ source, frontMatter }) {
   const BackIcon = (props) => (
