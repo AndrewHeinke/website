@@ -1,4 +1,5 @@
-import { Stack, Container, Heading, Text, Image, Box } from "@chakra-ui/react";
+import { Container, Heading, Text, WrapItem, Box } from "@chakra-ui/react";
+import Image from "components/Image";
 
 function About() {
   return (
@@ -16,15 +17,16 @@ function About() {
         pb="5"
         mb="12"
       >
-        <Image
+        <WrapItem
           w={["75px", "100px", "175px", "200px"]}
           position="absolute"
           bottom="0"
           right={["-.5rem", null, null, null]}
           left={[null, "-.5rem", "-1.5rem", "-2.5rem"]}
-          src="/images/unicorn.png"
-          alt=""
-        />
+        >
+          <Image src="/images/unicorn.png" alt="" />
+        </WrapItem>
+
         <Heading
           as="h2"
           fontSize={["1rem", "1.25rem", "1.75rem", "2rem"]}

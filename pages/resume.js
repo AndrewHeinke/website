@@ -7,11 +7,12 @@ import {
   Stack,
   Link,
   Icon,
-  Image,
   Progress,
+  WrapItem,
   VisuallyHidden,
   useColorModeValue,
 } from "@chakra-ui/react";
+import Image from "components/Image";
 
 function Resume() {
   const LinkIcon = (props) => (
@@ -99,14 +100,16 @@ function Resume() {
       </VisuallyHidden>
 
       <Stack direction="row" fontFamily="Inter" spacing="4" mb="12">
-        <Box borderRadius="full" borderWidth="6px">
-          <Image
-            borderRadius="full"
-            w="100px"
-            src="/images/andrew.jpg"
-            alt="Andrew Heinke"
-          />
-        </Box>
+        <WrapItem
+          borderWidth="6px"
+          borderRadius="full"
+          overflow="hidden"
+          bg="default"
+          w="100px"
+          h="100px"
+        >
+          <Image src="/images/andrew.jpg" alt="Andrew Heinke" />
+        </WrapItem>
 
         <Stack spacing="0" direction="column" justify="center">
           <Heading

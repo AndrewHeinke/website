@@ -54,6 +54,7 @@ export default function BlogPostCard({ post }) {
             mb={4}
             height={"230px"}
             w="100%"
+            priority="true"
             fit={"cover"}
             src={post.data.image}
             transition="0.3s ease"

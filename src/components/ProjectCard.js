@@ -60,6 +60,7 @@ export default function ProjectCard({ image, title, description, link }) {
           height={"auto"}
           borderBottomRightRadius="0"
           borderBottomLeftRadius="0"
+          priority="true"
           w="100%"
           src={image}
         />
