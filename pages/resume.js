@@ -108,7 +108,12 @@ function Resume() {
           w="100px"
           h="100px"
         >
-          <Image src="/images/andrew.jpg" alt="Andrew Heinke" />
+          <Image
+            src="/images/andrew.jpg"
+            width="100px"
+            height="100px"
+            alt="Andrew Heinke"
+          />
         </WrapItem>
 
         <Stack spacing="0" direction="column" justify="center">
