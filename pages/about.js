@@ -69,9 +69,13 @@ function About() {
         records management software at Mark43.
       </Text>
       <Text fontSize="lg" maxW="lg">
-        Building projects on Solana the{" "}
+        Building projects on the Solana{" "}
         <img
-          style={{ display: "inline-block", width: "1em" }}
+          style={{
+            display: "inline-block",
+            width: "1em",
+            verticalAlign: "middle",
+          }}
           src="https://abs.twimg.com/hashflags/Solana_Dec_2021/Solana_Dec_2021.png"
         />{" "}
         Blockchain
