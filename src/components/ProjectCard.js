@@ -7,7 +7,6 @@ import {
   Image,
   Box,
   Icon,
-  Spacer,
   useColorModeValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
@@ -60,7 +59,7 @@ export default function ProjectCard({ image, title, description, link }) {
           height={"auto"}
           borderBottomRightRadius="0"
           borderBottomLeftRadius="0"
-          priority="true"
+          priority
           w="100%"
           src={image}
         />

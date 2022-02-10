@@ -1,7 +1,33 @@
-import { Container, Heading, Text, WrapItem, Box } from "@chakra-ui/react";
+import {
+  Container,
+  Heading,
+  Text,
+  WrapItem,
+  Box,
+  Link,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import Image from "components/Image";
 
 function About() {
+  const AboutLink = (props) => {
+    const { children, notExternal, ...restOfProps } = props;
+    return (
+      <Link
+        color={useColorModeValue("purple.600", "purple.300")}
+        isExternal={notExternal ? false : true}
+        lineHeight="1.5"
+        fontSize="lg"
+        _hover={{
+          textDecoration: "underline",
+        }}
+        {...restOfProps}
+      >
+        {children}
+      </Link>
+    );
+  };
+
   return (
     <Container mt="12" maxW="container.md">
       <Heading mb="12" textAlign="center">
@@ -37,11 +63,22 @@ function About() {
           <br />I have a wide array of skills to develop amazing experiences.
         </Heading>
       </Box>
-      <Text fontSize="lg" maxW="lg">
+      <Text fontSize="lg" maxW="lg" mb={3}>
         Andrew Heinke is a web developer currently living in Austin Texas.
-        JavaScript is his language of choice writing React applications and
-        developing components at USAA as part of the Design Language Systems
-        team.
+        Currently developing new features for computer aided dispatch and
+        records management software at Mark43.
+      </Text>
+      <Text fontSize="lg" maxW="lg">
+        Building projects on Solana the{" "}
+        <img
+          style={{ display: "inline-block", width: "1em" }}
+          src="https://abs.twimg.com/hashflags/Solana_Dec_2021/Solana_Dec_2021.png"
+        />{" "}
+        Blockchain
+      </Text>
+      <Text>
+        <AboutLink href="https://www.saibagang.com/">Saiba Gang</AboutLink> /{" "}
+        <AboutLink href="https://www.musicbros.io/">Music Bros NFT</AboutLink>
       </Text>
     </Container>
   );
