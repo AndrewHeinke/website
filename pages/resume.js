@@ -1,3 +1,4 @@
+import Head from "next/head";
 import {
   Container,
   Text,
@@ -79,7 +80,7 @@ function Resume() {
   const ResumeDate = (props) => (
     <Text
       {...props}
-      minW="125px"
+      minW="250px"
       fontSize={[".875rem", ".875rem", "inherit", "inherit"]}
       color={useColorModeValue("gray.500", "gray.300")}
     />
@@ -94,195 +95,204 @@ function Resume() {
   );
 
   return (
-    <Container mt="12" fontFamily="Fira Code" fontWeight="500">
-      <VisuallyHidden>
-        <Heading as="h1">Andrew Heinke Resume</Heading>
-      </VisuallyHidden>
+    <>
+      <Head>
+        <title>Resume - Andrew Heinke</title>
+        <meta
+          name="description"
+          content="Resume, Andrew Heinke, Senior Software Engineer."
+        ></meta>
+      </Head>
+      <Container mt="12" fontFamily="Fira Code" fontWeight="500">
+        <VisuallyHidden>
+          <Heading as="h1">Andrew Heinke Resume</Heading>
+        </VisuallyHidden>
 
-      <Stack direction="row" fontFamily="Inter" spacing="4" mb="12">
-        <WrapItem
-          borderWidth="6px"
-          borderRadius="full"
-          overflow="hidden"
-          bg="default"
-          w="100px"
-          h="100px"
-        >
-          <Image
-            src="/images/andrew.jpg"
-            width="100px"
-            height="100px"
-            alt="Andrew Heinke"
-          />
-        </WrapItem>
+        <Stack direction="row" fontFamily="Inter" spacing="4" mb="12">
+          <WrapItem
+            borderWidth="6px"
+            borderRadius="full"
+            overflow="hidden"
+            bg="default"
+            w="100px"
+            h="100px"
+          >
+            <Image
+              src="/images/andrew.jpg"
+              width="100px"
+              height="100px"
+              alt="Andrew Heinke"
+            />
+          </WrapItem>
 
-        <Stack spacing="0" direction="column" justify="center">
-          <Heading
-            as="h2"
-            fontSize="1.75rem"
-            fontWeight="400"
-            lineHeight="1"
-            mb="2px"
-          >
-            Andrew Heinke
-          </Heading>
-          <Text color={useColorModeValue("gray.500", "gray.400")}>
-            Front-end Engineer in Austin, Texas
-          </Text>
-          <Link
-            color={useColorModeValue("gray.400", "gray.600")}
-            fontSize=".875rem"
-            href="andrewheinke.com"
-          >
-            andrewheinke.com
-          </Link>
-        </Stack>
-      </Stack>
-      <VStack spacing={12} align="stretch">
-        <ResumeSection title="About">
-          <Text
-            fontSize="md"
-            fontFamily="Inter"
-            color={useColorModeValue("gray.600", "gray.400")}
-          >
-            Andrew Heinke is a senior front-end engineer with a strong focus on
-            interfaces and experiences working remotely from Austin, Texas.
-          </Text>
-        </ResumeSection>
-        <ResumeSection title="Work Experience">
-          <ResumeRow>
-            <ResumeDate>2021 – Now</ResumeDate>
-            <Box>
-              <ResumeLink href="https://mark43.com/">
-                Senior Front End Engineer at Mark43
-              </ResumeLink>
-              <ResumeLocation>Remote</ResumeLocation>
-            </Box>
-          </ResumeRow>
-          <ResumeRow>
-            <ResumeDate>2017 – 2021</ResumeDate>
-            <Box>
-              <ResumeLink href="https://www.usaa.com/">
-                Software Engineer at USAA
-              </ResumeLink>
-              <ResumeLocation>Austin, Texas</ResumeLocation>
-            </Box>
-          </ResumeRow>
-          <ResumeRow>
-            <ResumeDate>2015 – 2017</ResumeDate>
-            <Box>
-              <ResumeLink href="https://www.kasasa.com/">
-                UI Designer at Kasasa
-              </ResumeLink>
-              <ResumeLocation>Austin, Texas</ResumeLocation>
-            </Box>
-          </ResumeRow>
-          <ResumeRow>
-            <ResumeDate>2015</ResumeDate>
-            <Box>
-              <ResumeLink href="https://www.crunchbase.com/organization/mosak-advertising-insights">
-                Junior Developer at MOSAK
-              </ResumeLink>
-              <ResumeLocation>Austin, Texas</ResumeLocation>
-            </Box>
-          </ResumeRow>
-        </ResumeSection>
-        <ResumeSection title="Education">
-          <ResumeRow>
-            <ResumeDate>2016</ResumeDate>
-            <Box>
-              <ResumeLink href="https://www.utexas.edu/">
-                The University of Texas at Austin
-              </ResumeLink>
-              <ResumeLocation>Full Stack Coding Bootcamp</ResumeLocation>
-            </Box>
-          </ResumeRow>
-          <ResumeRow>
-            <ResumeDate>2011 – 2015</ResumeDate>
-            <Box>
-              <ResumeLink href="https://www.utexas.edu/">
-                The University of Texas at Austin
-              </ResumeLink>
-              <ResumeLocation>B.S. Advertising</ResumeLocation>
-            </Box>
-          </ResumeRow>
-        </ResumeSection>
-        <ResumeSection title="Skills">
-          <Stack spacing={5}>
-            <Box>
-              <Text mb="1">HTML5 &amp; CSS</Text>
-              <Progress value={100} size="xs" colorScheme="green" />
-            </Box>
-            <Box>
-              <Text mb="1">JavaScript</Text>
-              <Progress value={90} size="xs" colorScheme="green" />
-            </Box>
-            <Box>
-              <Text mb="1">React</Text>
-              <Progress value={90} size="xs" colorScheme="green" />
-            </Box>
-            <Box>
-              <Text mb="1">Accessibility</Text>
-              <Progress value={95} size="xs" colorScheme="green" />
-            </Box>
-            <Box>
-              <Text mb="1">Adobe Creative Suite</Text>
-              <Progress value={100} size="xs" colorScheme="green" />
-            </Box>
-            <Box>
-              <Text mb="1">Singing</Text>
-              <Progress value={40} size="xs" colorScheme="yellow" />
-            </Box>
-            <Box>
-              <Text mb="1">Basketball</Text>
-              <Progress value={10} size="xs" colorScheme="red" />
-            </Box>
+          <Stack spacing="0" direction="column" justify="center">
+            <Heading
+              as="h2"
+              fontSize="1.75rem"
+              fontWeight="400"
+              lineHeight="1"
+              mb="2px"
+            >
+              Andrew Heinke
+            </Heading>
+            <Text color={useColorModeValue("gray.500", "gray.400")}>
+              Front-end Engineer in Austin, Texas
+            </Text>
+            <Link
+              color={useColorModeValue("gray.400", "gray.600")}
+              fontSize=".875rem"
+              href="/"
+            >
+              andrewheinke.com
+            </Link>
           </Stack>
-        </ResumeSection>
-        <ResumeSection title="Contact">
-          <ResumeRow>
-            <ResumeDate>LinkedIn</ResumeDate>
-            <Box>
-              <ResumeLink href="https://www.linkedin.com/in/andrewheinke/">
-                andrewheinke
-              </ResumeLink>
-            </Box>
-          </ResumeRow>
-          <ResumeRow>
-            <ResumeDate>GitHub</ResumeDate>
-            <Box>
-              <ResumeLink href="https://github.com/AndrewHeinke">
-                AndrewHeinke
-              </ResumeLink>
-            </Box>
-          </ResumeRow>
-          <ResumeRow>
-            <ResumeDate>Instagram</ResumeDate>
-            <Box>
-              <ResumeLink href="https://www.instagram.com/andrewheinke/">
-                andrewheinke
-              </ResumeLink>
-            </Box>
-          </ResumeRow>
-          <ResumeRow>
-            <ResumeDate>Twitter</ResumeDate>
-            <Box>
-              <ResumeLink href="https://twitter.com/andrewheinke">
-                andrewheinke
-              </ResumeLink>
-            </Box>
-          </ResumeRow>
-          <ResumeRow>
-            <ResumeDate>Email</ResumeDate>
-            <Box>
-              <ResumeLink notExternal href="mailto:andrew.j.heinke@gmail.com">
-                andrew.j.heinke@gmail.com
-              </ResumeLink>
-            </Box>
-          </ResumeRow>
-        </ResumeSection>
-      </VStack>
-    </Container>
+        </Stack>
+        <VStack spacing={12} align="stretch">
+          <ResumeSection title="About">
+            <Text
+              fontSize="md"
+              fontFamily="Inter"
+              color={useColorModeValue("gray.600", "gray.400")}
+            >
+              Andrew Heinke is a senior front-end engineer with a strong focus
+              on interfaces and experiences working remotely from Austin, Texas.
+            </Text>
+          </ResumeSection>
+          <ResumeSection title="Work Experience">
+            <ResumeRow>
+              <ResumeDate>Aug 2021 – Apr 2022</ResumeDate>
+              <Box>
+                <ResumeLink href="https://mark43.com/">
+                  Senior Software Engineer at Mark43
+                </ResumeLink>
+                <ResumeLocation>Remote</ResumeLocation>
+              </Box>
+            </ResumeRow>
+            <ResumeRow>
+              <ResumeDate>Apr 2017 - Aug 2021</ResumeDate>
+              <Box>
+                <ResumeLink href="https://www.usaa.com/">
+                  Software Engineer at USAA
+                </ResumeLink>
+                <ResumeLocation>Austin, Texas</ResumeLocation>
+              </Box>
+            </ResumeRow>
+            <ResumeRow>
+              <ResumeDate>Oct 2015 - Apr 2017</ResumeDate>
+              <Box>
+                <ResumeLink href="https://www.kasasa.com/">
+                  UI Designer at Kasasa
+                </ResumeLink>
+                <ResumeLocation>Austin, Texas</ResumeLocation>
+              </Box>
+            </ResumeRow>
+            <ResumeRow>
+              <ResumeDate>Jan 2015 - Oct 2015</ResumeDate>
+              <Box>
+                <ResumeLink href="https://www.crunchbase.com/organization/mosak-advertising-insights">
+                  Junior Developer at MOSAK
+                </ResumeLink>
+                <ResumeLocation>Austin, Texas</ResumeLocation>
+              </Box>
+            </ResumeRow>
+          </ResumeSection>
+          <ResumeSection title="Education">
+            <ResumeRow>
+              <ResumeDate>2016</ResumeDate>
+              <Box>
+                <ResumeLink href="https://www.utexas.edu/">
+                  The University of Texas at Austin
+                </ResumeLink>
+                <ResumeLocation>Full Stack Coding Bootcamp</ResumeLocation>
+              </Box>
+            </ResumeRow>
+            <ResumeRow>
+              <ResumeDate>2011 – 2015</ResumeDate>
+              <Box>
+                <ResumeLink href="https://www.utexas.edu/">
+                  The University of Texas at Austin
+                </ResumeLink>
+                <ResumeLocation>B.S. Advertising</ResumeLocation>
+              </Box>
+            </ResumeRow>
+          </ResumeSection>
+          <ResumeSection title="Skills">
+            <Stack spacing={5}>
+              <Box>
+                <Text mb="1">HTML5 &amp; CSS</Text>
+                <Progress value={100} size="xs" colorScheme="green" />
+              </Box>
+              <Box>
+                <Text mb="1">JavaScript</Text>
+                <Progress value={90} size="xs" colorScheme="green" />
+              </Box>
+              <Box>
+                <Text mb="1">React</Text>
+                <Progress value={90} size="xs" colorScheme="green" />
+              </Box>
+              <Box>
+                <Text mb="1">Accessibility</Text>
+                <Progress value={95} size="xs" colorScheme="green" />
+              </Box>
+              <Box>
+                <Text mb="1">Adobe Creative Suite</Text>
+                <Progress value={100} size="xs" colorScheme="green" />
+              </Box>
+              <Box>
+                <Text mb="1">Singing</Text>
+                <Progress value={40} size="xs" colorScheme="yellow" />
+              </Box>
+              <Box>
+                <Text mb="1">Basketball</Text>
+                <Progress value={10} size="xs" colorScheme="red" />
+              </Box>
+            </Stack>
+          </ResumeSection>
+          <ResumeSection title="Contact">
+            <ResumeRow>
+              <ResumeDate>LinkedIn</ResumeDate>
+              <Box>
+                <ResumeLink href="https://www.linkedin.com/in/andrewheinke/">
+                  andrewheinke
+                </ResumeLink>
+              </Box>
+            </ResumeRow>
+            <ResumeRow>
+              <ResumeDate>GitHub</ResumeDate>
+              <Box>
+                <ResumeLink href="https://github.com/AndrewHeinke">
+                  AndrewHeinke
+                </ResumeLink>
+              </Box>
+            </ResumeRow>
+            <ResumeRow>
+              <ResumeDate>Instagram</ResumeDate>
+              <Box>
+                <ResumeLink href="https://www.instagram.com/andrewheinke/">
+                  andrewheinke
+                </ResumeLink>
+              </Box>
+            </ResumeRow>
+            <ResumeRow>
+              <ResumeDate>Twitter</ResumeDate>
+              <Box>
+                <ResumeLink href="https://twitter.com/andrewheinke">
+                  andrewheinke
+                </ResumeLink>
+              </Box>
+            </ResumeRow>
+            <ResumeRow>
+              <ResumeDate>Email</ResumeDate>
+              <Box>
+                <ResumeLink notExternal href="mailto:andrew.j.heinke@gmail.com">
+                  andrew.j.heinke@gmail.com
+                </ResumeLink>
+              </Box>
+            </ResumeRow>
+          </ResumeSection>
+        </VStack>
+      </Container>
+    </>
   );
 }
 

@@ -33,13 +33,13 @@ const siteConfig = {
       site_name: "Andrew Heinke, Front End Software Engineer",
       images: [
         {
-          url: "https://andrewheinke.com/og-image.png",
+          url: "https://andrewheinke.com/images/og-image.png",
           width: 1240,
           height: 480,
           alt: "Andrew Heinke, Front End Software Engineer",
         },
         {
-          url: "https://andrewheinke/twitter-og-image.png",
+          url: "https://andrewheinke.com/images/twitter-og-image.png",
           width: 1012,
           height: 506,
           alt: "Andrew Heinke, Front End Software Engineer",

@@ -59,12 +59,18 @@ export default function ProjectCard({ image, title, description, link }) {
           height={"auto"}
           borderBottomRightRadius="0"
           borderBottomLeftRadius="0"
-          priority
+          priority="true"
           w="100%"
           src={image}
         />
         <Box p={6}>
-          <Heading as="h3" zIndex={10} size="md" mb="2">
+          <Heading
+            as="h3"
+            zIndex={10}
+            size="md"
+            mb="2"
+            color={useColorModeValue("purple.600", "purple.300")}
+          >
             <Link href={link} passHref isExternal>
               <LinkOverlay>
                 {title} <LinkIcon />
