@@ -160,6 +160,15 @@ function Resume() {
           </ResumeSection>
           <ResumeSection title="Work Experience">
             <ResumeRow>
+              <ResumeDate>June 2022 – Present</ResumeDate>
+              <Box>
+                <ResumeLink href="https://aws.amazon.com/">
+                  Front End Engineer at AWS
+                </ResumeLink>
+                <ResumeLocation>Austin, Texas</ResumeLocation>
+              </Box>
+            </ResumeRow>
+            <ResumeRow>
               <ResumeDate>Aug 2021 – Apr 2022</ResumeDate>
               <Box>
                 <ResumeLink href="https://mark43.com/">

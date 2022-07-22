@@ -36,7 +36,7 @@ function About() {
         <meta
           name="description"
           content="Andrew Heinke is a web developer living in Austin, Texas. Working in
-        React, TypeScript and NextJS. Currently open to new opportunities."
+        React, TypeScript and NextJS."
         ></meta>
       </Head>
       <Container mt="12" maxW="container.md">
