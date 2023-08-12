@@ -8,7 +8,7 @@ function Footer() {
     <Flex as="footer" background={footerBG} className={styles["footer"]}>
       <Container maxW="container.xl">
         <Text className={styles["footer-text-flex"]}>
-          Find me on the Internet:
+          Find me on the Internet 👨🏻‍💻
         </Text>
         <Text className={styles["footer-text-flex"]}>
           Made with <HeartIcon className="heart" /> in Austin, TX. &copy;{" "}

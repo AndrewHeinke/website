@@ -1,3 +1,4 @@
+import * as React from "react";
 import * as Chakra from "@chakra-ui/react";
 import { Heading, Text, Link } from "@chakra-ui/react";
 import { InlineCode } from "components/mdx-components/inline-code";
@@ -5,7 +6,6 @@ import { Pre } from "components/mdx-components/pre";
 import { VideoEmbed } from "components/mdx-components/video-embed";
 import { Table, TData, THead } from "components/mdx-components/table";
 import CodeBlock from "./codeblock/codeblock";
-import * as React from "react";
 
 const { Alert, Box, chakra, Kbd } = Chakra;
 export const MDXComponents = {

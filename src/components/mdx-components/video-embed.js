@@ -1,5 +1,5 @@
-import { Heading, AspectRatio } from "@chakra-ui/react";
 import * as React from "react";
+import { AspectRatio } from "@chakra-ui/react";
 
 export const VideoEmbed = (props) => {
   const { src, title, ...restOfProps } = props;
@@ -7,9 +7,9 @@ export const VideoEmbed = (props) => {
     <AspectRatio maxW="560px" ratio={16 / 9} my="8" {...restOfProps}>
       <iframe
         src={src}
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
       />
     </AspectRatio>
   );

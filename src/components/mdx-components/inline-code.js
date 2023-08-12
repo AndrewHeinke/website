@@ -1,5 +1,5 @@
-import { chakra, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
+import { chakra, useColorModeValue } from "@chakra-ui/react";
 
 export const InlineCode = (props) => (
   <chakra.code

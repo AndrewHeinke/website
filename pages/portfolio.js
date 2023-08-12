@@ -55,18 +55,6 @@ function Portfolio() {
             link="https://www.musicbros.io/"
           />
           <ProjectCard
-            title="Elderly"
-            description="A web application to connect elderly people with local volunteers."
-            image="/images/elderly.jpg"
-            link="http://pacific-hamlet-23272.herokuapp.com/"
-          />
-          <ProjectCard
-            title="LineUp"
-            description="See how long the line is before you vote. This web app uses geofencing to verify crowdsourced voting on the length of lines."
-            image="/images/lineup.jpg"
-            link="https://pure-scrubland-81366.herokuapp.com/"
-          />
-          <ProjectCard
             title="Clash Royale RPG"
             description="Prepare for battle, play my Clash Royale inspired role playing game!"
             image="/images/clash-royale.jpg"
@@ -83,12 +71,6 @@ function Portfolio() {
             description="Do you want to be the very best? Test your knowledge with this hangman game."
             image="/images/pokemon.jpg"
             link="http://andrewheinke.github.io/week-3-game/"
-          />
-          <ProjectCard
-            title="Eat Da Burger"
-            description="A simple app to create and eat burgers. Utlizes MySQL database and Sequelize Nodejs package"
-            image="/images/hamburger.jpg"
-            link="http://immense-garden-11246.herokuapp.com/burgers"
           />
         </Grid>
       </Container>

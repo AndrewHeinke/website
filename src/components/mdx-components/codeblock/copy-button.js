@@ -1,5 +1,5 @@
-import { Button, ButtonProps, useClipboard } from "@chakra-ui/react";
 import React from "react";
+import { Button, ButtonProps, useClipboard } from "@chakra-ui/react";
 
 function CopyButton({ code, ...props }) {
   const { hasCopied, onCopy } = useClipboard(code);

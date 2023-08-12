@@ -1,6 +1,6 @@
+import React from "react";
 import { Box } from "@chakra-ui/react";
 import Highlight, { defaultProps } from "prism-react-renderer";
-import React from "react";
 
 function Basic({ codeString, language, ...props }) {
   return (

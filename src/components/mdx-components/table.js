@@ -1,5 +1,5 @@
-import { chakra, useColorModeValue } from "@chakra-ui/react";
 import * as React from "react";
+import { chakra, useColorModeValue } from "@chakra-ui/react";
 
 export const Table = (props) => (
   <chakra.div overflowX="auto" my="4">

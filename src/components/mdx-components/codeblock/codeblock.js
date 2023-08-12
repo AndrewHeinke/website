@@ -1,5 +1,5 @@
-import theme from "prism-react-renderer/themes/dracula";
 import React from "react";
+import theme from "prism-react-renderer/themes/dracula";
 import { Box } from "@chakra-ui/react";
 import CodeContainer from "./code-container";
 import CopyButton from "./copy-button";
