@@ -16,7 +16,7 @@ export default function Home() {
         color={useColorModeValue("gray.600", "gray.100")}
       >
         Hi there <span className="wave">👋🏻</span>{" "}
-        <span style={{ whiteSpace: "nowrap" }}>I'm Andrew 👨🏻‍💻</span>
+        <span style={{ whiteSpace: "nowrap" }}>I'm Andrew.</span>
       </Heading>
       <Heading
         as="h2"

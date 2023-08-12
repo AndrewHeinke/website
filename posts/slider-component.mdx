@@ -1,0 +1,102 @@
+---
+title: React Slideshow Component
+description: A React Slideshow component with all the bells and whistles
+date: 2023-08-12T09:15:00-0400
+image: https://www.andrewheinke.com/images/slideshow.webp
+---
+
+## A React Slideshow component with all the bells and whistles
+
+- [Live Demo →](https://ligzbo.csb.app/)
+- [Code View →](https://codesandbox.io/s/ligzbo)
+
+I loved the slider used in [https://www.educative.io/](educative.io) so I wanted to recreate the design and functionality with React.
+
+### Features
+
+- Previous/Next Slide
+- Autoplay slides
+- Restart slider
+- Expand/Collapse all slides
+- Fullscreen slides mode
+
+### Simple API
+
+```
+const data = [
+  {
+    title: "First",
+    text: "foo bar baz"
+  },
+  ...
+];
+
+...
+
+// optional prop autoPlayTime to control autoplay time on slide
+<Slides slides={data} />
+```
+
+To avoid repeating code I utilized a few custom hooks:
+
+`useCount` – for controlling active slide index
+
+```
+import { useState } from "react";
+
+export const useCount = (initialValue = 0) => {
+  const [activeIndex, setActiveIndex] = useState(initialValue);
+
+  const increment = () => {
+    setActiveIndex((prev) => prev + 1);
+  };
+
+  const decrement = () => {
+    setActiveIndex((prev) => prev - 1);
+  };
+
+  const reset = () => {
+    setActiveIndex(initialValue);
+  };
+
+  return [activeIndex, increment, decrement, reset];
+};
+```
+
+`useToggle` – for controlling expanded/collapsed slides, autoplay mode and full screen mode
+
+```
+import { useCallback, useState } from "react";
+
+export const useToggle = (initialValue = false) => {
+  const [state, setState] = useState(initialValue);
+  const toggle = useCallback(() => setState((state) => !state), []);
+  return [state, toggle];
+};
+```
+
+`useInterval` – for controlling slide increments in autoplay mode
+
+```
+import { useEffect, useRef } from "react";
+export const useInterval = (callback, delay) => {
+  const intervalId = useRef(null);
+  const savedCallback = useRef(callback);
+
+  useEffect(() => {
+    savedCallback.current = callback;
+  });
+
+  useEffect(() => {
+    const tick = () => savedCallback.current();
+
+    if (typeof delay === "number") {
+      intervalId.current = window.setInterval(tick, delay);
+
+      return () => window.clearInterval(intervalId.current);
+    }
+  }, [delay]);
+
+  return intervalId.current;
+};
+```
